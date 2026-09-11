@@ -1,0 +1,33 @@
+name: primary
+description: >
+  Official CEC 2017 single-objective bound-constrained suite, F1 and F3-F30
+  (F2 excluded for numerical instability), at D = 10, 30, and 50, with 30
+  independent runs per cell under a common evaluation budget and nine algorithms.
+suite: cec2017
+functions: null
+dimensions: [10, 30, 50]
+runs: 30
+seed_base: 0
+
+budget_per_dimension: 300
+max_evaluations: null
+max_tasks_per_child: 0
+future_timeout_seconds: 1800
+max_pool_restarts: 50
+
+trace_points: 60
+error_floor: 1.0e-8
+targets: [1.0e+2, 1.0e+1, 1.0e+0, 1.0e-1, 1.0e-2, 1.0e-4, 1.0e-6, 1.0e-8]
+
+algorithms: [LAO, PSO, GA, DE, GWO, WOA, CMAES, SHADE, LSHADE]
+
+algorithm_parameters:
+  LAO: {}
+  PSO: {}
+  GA: {}
+  DE: {}
+  GWO: {}
+  WOA: {}
+  CMAES: {}
+  SHADE: {min_generations: 50}
+  LSHADE: {min_generations: 50}

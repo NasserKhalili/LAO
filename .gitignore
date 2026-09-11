@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+
+# Local CEC support-data caches
+src/lao/cec2017_data/_parsed/
+
+# Generated experiment outputs
+outputs/
+results/
+logs/

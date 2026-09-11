@@ -1,0 +1,172 @@
+name: ablation_factorial
+description: Full 2^4 factorial ablation of the four switchable LAO components
+  (drift, gust, vibration, and elite refinement) on the CEC 2017 suite at D = 10.
+suite: cec2017
+functions: null
+dimensions:
+- 10
+runs: 30
+seed_base: 0
+budget_per_dimension: 300
+max_evaluations: null
+max_tasks_per_child: 0
+future_timeout_seconds: 1800
+max_pool_restarts: 50
+trace_points: 40
+error_floor: 1.0e-08
+targets:
+- 100.0
+- 10.0
+- 1.0
+- 0.1
+- 0.01
+- 0.0001
+- 1.0e-06
+- 1.0e-08
+algorithms:
+- LAO_D
+- LAO_DE
+- LAO_DG
+- LAO_DGE
+- LAO_DGV
+- LAO_DV
+- LAO_DVE
+- LAO_E
+- LAO_G
+- LAO_GE
+- LAO_GV
+- LAO_GVE
+- LAO_V
+- LAO_VE
+- LAO_base
+- LAO_full
+algorithm_variants:
+  LAO_full:
+    base: LAO
+    params:
+      enable_drift: true
+      enable_gust: true
+      enable_vibration: true
+      enable_elite: true
+  LAO_DGV:
+    base: LAO
+    params:
+      enable_drift: true
+      enable_gust: true
+      enable_vibration: true
+      enable_elite: false
+  LAO_DGE:
+    base: LAO
+    params:
+      enable_drift: true
+      enable_gust: true
+      enable_vibration: false
+      enable_elite: true
+  LAO_DG:
+    base: LAO
+    params:
+      enable_drift: true
+      enable_gust: true
+      enable_vibration: false
+      enable_elite: false
+  LAO_DVE:
+    base: LAO
+    params:
+      enable_drift: true
+      enable_gust: false
+      enable_vibration: true
+      enable_elite: true
+  LAO_DV:
+    base: LAO
+    params:
+      enable_drift: true
+      enable_gust: false
+      enable_vibration: true
+      enable_elite: false
+  LAO_DE:
+    base: LAO
+    params:
+      enable_drift: true
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: true
+  LAO_D:
+    base: LAO
+    params:
+      enable_drift: true
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+  LAO_GVE:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: true
+      enable_vibration: true
+      enable_elite: true
+  LAO_GV:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: true
+      enable_vibration: true
+      enable_elite: false
+  LAO_GE:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: true
+      enable_vibration: false
+      enable_elite: true
+  LAO_G:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: true
+      enable_vibration: false
+      enable_elite: false
+  LAO_VE:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: true
+      enable_elite: true
+  LAO_V:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: true
+      enable_elite: false
+  LAO_E:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: true
+  LAO_base:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+algorithm_parameters:
+  LAO_D: {}
+  LAO_DE: {}
+  LAO_DG: {}
+  LAO_DGE: {}
+  LAO_DGV: {}
+  LAO_DV: {}
+  LAO_DVE: {}
+  LAO_E: {}
+  LAO_G: {}
+  LAO_GE: {}
+  LAO_GV: {}
+  LAO_GVE: {}
+  LAO_V: {}
+  LAO_VE: {}
+  LAO_base: {}
+  LAO_full: {}

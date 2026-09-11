@@ -1,0 +1,68 @@
+name: budget_stability_3000D
+description: 'Budget-stability sweep at D = 10 on a pre-registered stratified subset
+  of the official CEC 2017 suite (lowest-numbered functions of each class, chosen
+  by index before any result was inspected). Four budgets are run as separate experiments
+  to test whether the ranking is stable; this one uses MaxFEs = 3000 * D. '
+suite: cec2017
+functions:
+- F01
+- F03
+- F04
+- F05
+- F06
+- F11
+- F12
+- F13
+- F21
+- F22
+- F23
+dimensions:
+- 10
+runs: 30
+seed_base: 0
+budget_per_dimension: 3000
+max_evaluations: null
+max_tasks_per_child: 0
+future_timeout_seconds: 3600
+max_pool_restarts: 50
+trace_points: 60
+error_floor: 1.0e-08
+targets:
+- 100.0
+- 10.0
+- 1.0
+- 0.1
+- 0.01
+- 0.0001
+- 1.0e-06
+- 1.0e-08
+algorithms:
+- LAO
+- PSO
+- GA
+- DE
+- GWO
+- WOA
+- CMAES
+- SHADE
+- LSHADE
+algorithm_variants:
+  LAO:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+algorithm_parameters:
+  LAO: {}
+  PSO: {}
+  GA: {}
+  DE: {}
+  GWO: {}
+  WOA: {}
+  CMAES: {}
+  SHADE:
+    min_generations: 50
+  LSHADE:
+    min_generations: 50

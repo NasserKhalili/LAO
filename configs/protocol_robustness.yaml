@@ -1,0 +1,348 @@
+name: robustness_perturbation
+description: Local sensitivity analysis of five continuous LAO parameters at
+  ±10%, ±20%, and ±30% relative to the shipped defaults, using paired seeds.
+suite: cec2017
+functions:
+- F01
+- F03
+- F04
+- F05
+- F06
+- F11
+- F12
+- F13
+- F21
+- F22
+- F23
+dimensions:
+- 10
+runs: 30
+seed_base: 0
+budget_per_dimension: 300
+max_evaluations: null
+max_tasks_per_child: 0
+future_timeout_seconds: 1800
+max_pool_restarts: 50
+trace_points: 40
+error_floor: 1.0e-08
+targets:
+- 100.0
+- 10.0
+- 1.0
+- 0.1
+- 0.01
+- 0.0001
+- 1.0e-06
+- 1.0e-08
+algorithms:
+- LAO-default
+- LAO_diversity_weight+10%
+- LAO_diversity_weight+20%
+- LAO_diversity_weight+30%
+- LAO_diversity_weight-10%
+- LAO_diversity_weight-20%
+- LAO_diversity_weight-30%
+- LAO_local_probability+10%
+- LAO_local_probability+20%
+- LAO_local_probability+30%
+- LAO_local_probability-10%
+- LAO_local_probability-20%
+- LAO_local_probability-30%
+- LAO_phototropism+10%
+- LAO_phototropism+20%
+- LAO_phototropism+30%
+- LAO_phototropism-10%
+- LAO_phototropism-20%
+- LAO_phototropism-30%
+- LAO_seasonal_weight+10%
+- LAO_seasonal_weight+20%
+- LAO_seasonal_weight+30%
+- LAO_seasonal_weight-10%
+- LAO_seasonal_weight-20%
+- LAO_seasonal_weight-30%
+- LAO_step_scale+10%
+- LAO_step_scale+20%
+- LAO_step_scale+30%
+- LAO_step_scale-10%
+- LAO_step_scale-20%
+- LAO_step_scale-30%
+algorithm_variants:
+  LAO-default:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+  LAO_seasonal_weight-30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      seasonal_weight: 0.63
+  LAO_seasonal_weight-20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      seasonal_weight: 0.72
+  LAO_seasonal_weight-10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      seasonal_weight: 0.81
+  LAO_seasonal_weight+10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      seasonal_weight: 0.99
+  LAO_seasonal_weight+20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      seasonal_weight: 1.08
+  LAO_seasonal_weight+30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      seasonal_weight: 1.17
+  LAO_diversity_weight-30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      diversity_weight: 0.35
+  LAO_diversity_weight-20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      diversity_weight: 0.4
+  LAO_diversity_weight-10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      diversity_weight: 0.45
+  LAO_diversity_weight+10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      diversity_weight: 0.55
+  LAO_diversity_weight+20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      diversity_weight: 0.6
+  LAO_diversity_weight+30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      diversity_weight: 0.65
+  LAO_local_probability-30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      local_probability: 0.665
+  LAO_local_probability-20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      local_probability: 0.76
+  LAO_local_probability-10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      local_probability: 0.855
+  LAO_local_probability+10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      local_probability: 1.0
+  LAO_local_probability+20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      local_probability: 1.0
+  LAO_local_probability+30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      local_probability: 1.0
+  LAO_step_scale-30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      step_scale: 0.105
+  LAO_step_scale-20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      step_scale: 0.12
+  LAO_step_scale-10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      step_scale: 0.135
+  LAO_step_scale+10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      step_scale: 0.165
+  LAO_step_scale+20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      step_scale: 0.18
+  LAO_step_scale+30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      step_scale: 0.195
+  LAO_phototropism-30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      phototropism: 0.35
+  LAO_phototropism-20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      phototropism: 0.4
+  LAO_phototropism-10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      phototropism: 0.45
+  LAO_phototropism+10%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      phototropism: 0.55
+  LAO_phototropism+20%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      phototropism: 0.6
+  LAO_phototropism+30%:
+    base: LAO
+    params:
+      enable_drift: false
+      enable_gust: false
+      enable_vibration: false
+      enable_elite: false
+      phototropism: 0.65
+algorithm_parameters:
+  LAO-default: {}
+  LAO_diversity_weight+10%: {}
+  LAO_diversity_weight+20%: {}
+  LAO_diversity_weight+30%: {}
+  LAO_diversity_weight-10%: {}
+  LAO_diversity_weight-20%: {}
+  LAO_diversity_weight-30%: {}
+  LAO_local_probability+10%: {}
+  LAO_local_probability+20%: {}
+  LAO_local_probability+30%: {}
+  LAO_local_probability-10%: {}
+  LAO_local_probability-20%: {}
+  LAO_local_probability-30%: {}
+  LAO_phototropism+10%: {}
+  LAO_phototropism+20%: {}
+  LAO_phototropism+30%: {}
+  LAO_phototropism-10%: {}
+  LAO_phototropism-20%: {}
+  LAO_phototropism-30%: {}
+  LAO_seasonal_weight+10%: {}
+  LAO_seasonal_weight+20%: {}
+  LAO_seasonal_weight+30%: {}
+  LAO_seasonal_weight-10%: {}
+  LAO_seasonal_weight-20%: {}
+  LAO_seasonal_weight-30%: {}
+  LAO_step_scale+10%: {}
+  LAO_step_scale+20%: {}
+  LAO_step_scale+30%: {}
+  LAO_step_scale-10%: {}
+  LAO_step_scale-20%: {}
+  LAO_step_scale-30%: {}

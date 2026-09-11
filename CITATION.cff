@@ -1,0 +1,22 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite the accompanying manuscript."
+title: "Leaf-Abscission Optimization (LAO)"
+type: software
+version: "1.1.0"
+
+authors:
+  - family-names: Khalili
+    given-names: Nasser
+    email: nasser_khalili@gsme.sharif.edu
+
+repository-code: "https://github.com/NasserKhalili/LAO"
+url: "https://arxiv.org/abs/2609.10588"
+
+preferred-citation:
+  type: article
+  title: "Threshold-Based Selection for Continuous Optimization: A Leaf-Abscission Instantiation"
+  authors:
+    - family-names: Khalili
+      given-names: Nasser
+      email: nasser_khalili@gsme.sharif.edu
+  url: "https://arxiv.org/abs/2609.10588"

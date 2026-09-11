@@ -1,0 +1,33 @@
+{
+  "schema_version": "lao-public-repository-1",
+  "repository": "NasserKhalili/LAO",
+  "release": "1.1.0",
+  "purpose": "Reference implementation and study protocols accompanying the TEVC manuscript.",
+  "package": {
+    "source_root": "src/lao",
+    "configuration_root": "configs",
+    "test_root": "tests",
+    "scripts_root": "scripts"
+  },
+  "study": {
+    "primary_protocol": "configs/protocol_primary.yaml",
+    "ablation_protocol": "configs/protocol_ablation.yaml",
+    "budget_protocols": [
+      "configs/protocol_budget_300D.yaml",
+      "configs/protocol_budget_1000D.yaml",
+      "configs/protocol_budget_3000D.yaml",
+      "configs/protocol_budget_10000D.yaml"
+    ],
+    "robustness_protocol": "configs/protocol_robustness.yaml"
+  },
+  "cec2017_support_data": {
+    "included": false,
+    "expected_location": "src/lao/cec2017_data/",
+    "note": "Official CEC 2017 support data are not redistributed in this repository."
+  },
+  "experimental_outputs": {
+    "included": false,
+    "note": "Run-level ledgers, raw result tables, local workstation metadata, and internal audit artifacts are not part of the public repository."
+  },
+  "paper": "https://arxiv.org/abs/2609.10588"
+}

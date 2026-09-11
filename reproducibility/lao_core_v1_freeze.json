@@ -1,0 +1,26 @@
+{
+  "freeze_name": "LAO-Core v1.0",
+  "repository": "NasserKhalili/LAO",
+  "repository_release": "1.1.0",
+  "status": "PASS",
+  "frozen_architecture": {
+    "components_enabled": {
+      "drift": false,
+      "elite": false,
+      "gust": false,
+      "vibration": false
+    },
+    "regrowth": "tournament parent + phototropic pull + decaying Gaussian, or uniform global with probability 1 - p_local",
+    "selection_rule": "replace i iff AP_i > LS_i; rank-based LS; seasonal + diversity + environmental AP clipped to [0,1]"
+  },
+  "protocols": [
+    "configs/protocol_ablation.yaml",
+    "configs/protocol_budget_300D.yaml",
+    "configs/protocol_budget_1000D.yaml",
+    "configs/protocol_budget_3000D.yaml",
+    "configs/protocol_budget_10000D.yaml",
+    "configs/protocol_primary.yaml",
+    "configs/protocol_robustness.yaml"
+  ],
+  "note": "This file records the public repository-level architecture freeze. Experimental ledgers, generated result files, and workstation-specific metadata are intentionally excluded."
+}
